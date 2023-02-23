@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/if.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Some Memorable Movies</h1>
+<h3><span class="ital">How To Fall In Love</span>  (Ella Schneider, 2022)</h3>
+<div class="sideBySide">
+<img class="filmStill" onClick="onClick_FC_img01()" src="images/HTFIL_01.jpeg" alt="How To Fall In Love">
+<img class="filmStill" onClick="onClick_FC_img02()" src="images/HTFIL_02.jpeg" alt="How To Fall In Love"> 
+<img class="filmStill" onClick="onClick_FC_img03()" src="images/HTFIL_03.jpeg" alt="How To Fall In Love">
+</div>
+<p class="filmInfo" id="FC_text"></p>
+	<button type="button" onClick= "gotoMovie()" id= "gotoMovie_btn">Go to the movie</button>
+</body>
+<script>
+//Fight Club onClick text lines
+var FC_text = document.getElementById("FC_text");
+	
+var gotoMovie_btn= document.getElementById("gotoMovie_btn");
+	gotoMovie_btn.style.visibility= "hidden";
+var img01_clicked = false
+var img02_clicked = false
+var img03_clicked = false
+
+var FC01 = "We see one protagonist Lucas as he ponders what love really means to him and if hes been doing enough in his relationship. The sea to him represents ones truest desires and he feels that love can drown you if you're not careful"
+
+var FC00= "In 'How to Fall in Love' we follow 3 main protagonists as we examine Sternbergs Triangular Theory of Love. It is narrated over by a robotic and unsettling voice as weird imagery matches the topics discussed. It's a fun film, but yet takes itself seriously at times when its needed, its main goal is to make you go 'huh?'";
+	
+var FC02= "Sternbergs Triangular Theory of Love tackles the stages a couple moves through if not given all the proper components such as passion, commitment, and intimacy. We explore how without one or many of these components the relationship will fail to reach Consumate love."
+
+var FC03= "Through unsettling visuals and confusing elements, in this film the complexity of love and what comes with it is explored. For example you may gain your partner through eye contact ie the eyes on her face. This is also shown through lipstick being smeared on her face to represent physical attraction and smiling where she smiles wholeheartedly with lipstick on her teeth."
+	
+	
+// HER onClick text lines
+
+//Commands and functions
+
+FC_text.innerHTML  = FC00;
+function onClick_FC_img01(){
+	FC_text.innerHTML= FC01;
+	img01_clicked = true;
+	console.log("img01_clicked= " + img01_clicked);
+	revealButton();
+}
+
+function onClick_FC_img02(){
+	FC_text.innerHTML= FC02;
+	img02_clicked = true;
+	console.log("img02_clicked= " + img02_clicked);
+	revealButton();
+}
+function onClick_FC_img03(){
+	FC_text.innerHTML= FC03;
+	img03_clicked = true;
+	console.log("img03_clicked= " + img03_clicked);
+	revealButton();
+}
+
+	function revealButton(){
+		if (img01_clicked && img02_clicked && img03_clicked){
+			console.log("REVEAL BUTTON");
+			gotoMovie_btn.style.visibility= "visible";
+		}
+	}
+function gotoMovie(){
+	window.open("https://www.youtube.com/watch?v=y0P8zBIExx0","_blank");
+}		
+</script>
+</html>
