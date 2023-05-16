@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Date: Ring Doorbell</title>
+<link href="css/CYOA_sample.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- THE TITLE ABOVE THE VIDEO -->
+
+<h1> Ring Doorbell</h1>
+
+<!-- THE VIDEO -->
+<div>
+	<div class="vidCenter">
+      <video id="scene2_1" controls="controls" >
+        <source src="videos/scene2_1.mp4" type="video/mp4">
+      </video>
+	</div>  
+</div>
+
+<!-- THE CAPTION or PARAGRAPH UNDERNEATH THE VIDEO -->
+<!-- this appears when the video reaches its end -->
+
+<p id="caption">
+ You hear hurried footsteps, and a muffled scream. Your date arrives at the door and you shake hands. Where will you go on your date?
+</p>
+
+<!-- THE TWO BUTTONS UNDERNEATH THE CAPTION - CAN EASILY ADD MORE BUTTONS -->
+<!-- these appear when the video reaches its end -->
+
+<div id="DIVforButtons">
+<p>
+<button id="topButton" onClick="buttonOne()">The Lake</button>  
+</p>    
+<p>
+<button id="bottomButton" onClick="buttonTwo()">The Garden</button>    
+</p>
+</div>
+	
+	<audio></audio>
+    <audio id="SFX" controls="controls" >
+      <source src="../../../../../../Downloads/doorbell.mp3" type="audio/mp3">
+    </audio>
+<script>
+
+    document.getElementById('scene2_1').addEventListener('ended',whenVideoEnds,false);
+        
+    var btn1 = document.getElementById("topButton");
+    var btn2 = document.getElementById("bottomButton"); 
+   
+    var caption = document.getElementById("caption");    
+
+    caption.style.display = 'none';    
+    btn1.style.display = 'none';
+    btn2.style.display = 'none';        
+        
+    function whenVideoEnds(e) {
+		// these three commands make the caption and the 2 buttons visible
+        caption.style.display = 'block';    
+        btn1.style.display = 'block';
+        btn2.style.display = 'block';
+    }
+var sfx=document.getElementById("SFX")
+		// MAKE SURE THE WINDOW OPENS THE FILE NAME on YOUR DIRECTORY 
+		// Lines 63 and 64 are the only places you have to make a change
+        
+    function buttonOne() {
+        window.open ('scene3_2.html','_self',false)
+		SFX.play();
+    }
+        
+    function buttonTwo() {
+        window.open ('scene3_1.html','_self',false)
+    }    
+    </script>
+    
+</body>
+</html>
